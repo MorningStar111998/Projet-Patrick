@@ -1,8 +1,12 @@
 const express = require("express");
 const ejs = require("ejs");
 const tableData = require("./utils/table-data");
+const dotenv = require("dotenv");
+dotenv.config();
 
-const PORT = 3309;
+
+const PORT = process.env.PORT || 3309;
+
 
 const app = express();
 
