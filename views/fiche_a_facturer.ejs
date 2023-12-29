@@ -1,0 +1,107 @@
+<%- include("partials/header") -%>
+<div class="fiche-body">
+  <div class="fiche-body-left">
+    <h1>Fiches de Traiement</h1>
+    <div class="fiche-button">
+      <div class="fiche-button-left">
+        <button id="fiche-ajouter-nouveau" type="button">
+          <i class="bx bxs-plus-circle"></i>Ajouter Nouveau
+        </button>
+        <button id="fiche-imprimer" type="button">
+          <i class="bx bx-printer"></i>
+        </button>
+        <button id="fiche-filtrer" type="button">
+          <i class="fa-solid fa-sliders"></i>
+        </button>
+        <button id="fiche-pdf" type="button">
+          <i class="fa-solid fa-file-pdf"></i>
+        </button>
+      </div>
+      <div class="fiche-button-right">
+        <button id="fiche-generer-rapport" type="button">
+          <i class="bx bxs-file-export"></i>Générer un Rapport
+        </button>
+      </div>
+    </div>
+    <div class="fiche-table-container">
+      <div id="tableau-fiche-traitement"></div>
+    </div>
+  </div>
+  <div class="fiche-body-right">
+    <div class="pdf-viewer">
+      <div class="form-container">
+        <form class="myForm" id="myForm">
+          <div class="input-container">
+            <label for="code">Code:</label>
+            <input type="text" id="code" name="code" required />
+          </div>
+
+          <div class="input-container">
+            <label for="client">Client:</label>
+            <input type="text" id="client" name="client" required />
+          </div>
+
+          <div class="input-container">
+            <label for="operateur">Opérateur:</label>
+            <input type="text" id="operateur" name="operateur" required />
+          </div>
+
+          <div class="input-container">
+            <label for="matiere">Matière:</label>
+            <input type="text" id="matiere" name="matiere" required />
+          </div>
+
+          <div class="input-container">
+            <label for="durete">Dureté:</label>
+            <input type="text" id="durete" name="durete" required />
+          </div>
+
+          <div class="input-container">
+            <label for="designation">Désignation:</label>
+            <input type="text" id="designation" name="designation" required />
+          </div>
+
+          <div class="input-container">
+            <label for="qte">QTE:</label>
+            <input type="text" id="qte" name="qte" required />
+          </div>
+
+          <div class="input-container">
+            <label for="poids">Poids:</label>
+            <input type="text" id="poids" name="poids" required />
+          </div>
+
+          <div class="input-container">
+            <label for="prof">Prof:</label>
+            <input type="text" id="prof" name="prof" required />
+          </div>
+
+          <div class="input-container">
+            <label for="drtObt">DrtObt:</label>
+            <input type="text" id="drtObt" name="drtObt" required />
+          </div>
+
+          <div class="input-container">
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" required />
+          </div>
+
+          <div class="input-container">
+            <label for="statut">Statut:</label>
+            <input type="text" id="statut" name="statut" required />
+          </div>
+
+          <div class="input-container">
+            <label for="livraison">Livraison:</label>
+            <input type="text" id="livraison" name="livraison" required />
+          </div>
+
+          <button id="fiche-button-fermer" type="button"><i class="fa-solid fa-xmark"></i></button>
+          <button id="fiche-button-submit" type="submit">Ok</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

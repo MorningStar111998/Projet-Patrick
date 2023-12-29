@@ -1,0 +1,54 @@
+.accueil {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr); 
+    column-gap: 40px;
+    row-gap: 40px;
+    margin: 2%;
+}
+
+.accueil-title {
+    margin-left: 2%;
+}
+
+div.accueil > div {
+  min-height: 300px; /* Set a minimum height for all grid items */
+}
+
+div.accueil > div:nth-child(1) {
+  background-color: red;
+}
+
+div.accueil > div:nth-child(2) {
+  background-color: blue;
+}
+
+div.accueil > div:nth-child(3) {
+  background-color: green;
+}
+
+div.accueil > div:nth-child(4) {
+  background-color: yellow;
+}
+
+div.accueil > div:nth-child(5) {
+  background-color: orange;
+  grid-column: span 4;
+  grid-row: span 2; /* Make sure it spans only one row */
+}
+
+div.accueil > div:nth-child(6) {
+  background-color: purple;
+}
+
+div.accueil > div:nth-child(7) {
+  background-color: cyan;
+}
+
+div.accueil > div:nth-child(8) {
+  background-color: magenta;
+}
+
+div.accueil > div:nth-child(9) {
+  background-color: lightgreen;
+}

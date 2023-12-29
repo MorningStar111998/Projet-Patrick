@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet Patrick</title>
+    <link rel="shortcut icon" href="/images/jamai favicon.png" type="image/x-icon">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/accueil.css" />
+    <link rel="stylesheet" href="/css/clients.css" />
+    <link rel="stylesheet" href="/css/fiche_a_facturer.css" /> 
+    <link rel="stylesheet" href="/css/mes_factures.css" />
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://unpkg.com/tabulator-tables@5.5.2/dist/css/tabulator.min.css" rel="stylesheet">
+
+    <!-- Script pour télécharger Tableau en Excel-->
+    <script type="text/javascript" src="https://oss.sheetjs.com/sheetjs/xlsx.full.min.js"></script>
+
+    <!-- Script pour télécharger Tableau en PDF-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Script pour Thème Tableau Bootstrap 5-->
+    <link href="/css/dist/css/tabulator_bulma.min.css" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    
+    <nav class="sidebar active">
+      
+      <img
+        id="background-icon"
+        src="/images/jamai favicon.png"
+        alt="icone Airlod"
+      />
+      <div class="sidebar-header">
+        <img
+          class="sidebar-logo"
+          src="/images/jamai logo.png"
+          alt="logo de Airlod"
+        />
+        <div class="sidebar-btn"><i class="bx bx-menu"></i></div>
+      </div>
+      <hr />
+      <ul class="menu">
+        <li>
+          <a class="<%=activePage === 'accueil' ? 'active-page' : '' %>" href="/"
+            ><i class="bx bxs-home"></i>
+            <span class="link_name">Accueil</span></a
+          >
+          <span class="tool_tip">Accueil</span>
+        </li>
+        <li class="">
+          <a class="<%= activePage === 'clients' ? 'active-page' : '' %>" href="/clients"
+            ><i class="bx bxs-truck"></i>
+            <span class="link_name">Clients</span></a
+          >
+          <span class="tool_tip">Clients</span>
+        </li>
+        <li class="toggle-menu">
+          <div class="icon-link">
+            <a href="#">
+              <i class="bx bx-package"></i>
+              <span class="link_name">Factures</span></a
+            >
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_factures' ? 'rotated' : '' %>"></i>
+            <span class="tool_tip">Factures</span>
+          </div>
+          <ul class="sub-menu <%= activePage === 'fiche_a_facturer' || activePage === 'mes_factures' ? 'roll' : '' %>">
+            <li>
+              <a class="<%=activePage === 'fiche_a_facturer' ? 'active-page' : '' %>" href="/fiche_a_facturer"><i class="bx bx-plus"></i> Fiche à Facturer </a>
+            </li>
+            <li>
+              <a class="<%= activePage === 'mes_factures' ? 'active-page' : '' %>" href="/mes_factures"><i class="bx bx-list-ul"></i> Mes Factures </a>
+            </li>
+          </ul>
+        </li>
+        <!-- <li class="future-feature toggle-menu">
+          <div class="icon-link">
+            <a href="#"
+              ><i class="bx bx-box"></i> <span class="link_name">Stock</span></a
+            >
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'ajouter_produit' || activePage === 'mon_stock' ? 'rotated' : '' %>"></i>
+            <span class="tool_tip">Stock</span>
+          </div>
+          <ul class="sub-menu <%= activePage === 'ajouter_produit' || activePage === 'mon_stock' ? 'roll' : '' %>">
+            <li>
+              <a class="<%= activePage === 'ajouter_produit' ? 'active-page' : '' %>" href="/ajouter_produit"><i class="bx bx-plus"></i> Ajouter Produit </a>
+            </li>
+            <li>
+              <a class="<%= activePage === 'mon_stock' ? 'active-page' : '' %>" href="/mon_stock"><i class="bx bx-list-ul"></i> Mon Stock </a>
+            </li>
+          </ul>
+        </li>
+        
+        <li class="future-feature">
+          <a class="<%= activePage === 'reclamation' ? 'active-page' : '' %>" href="/reclamation"
+            ><i class="bx bx-headphone"></i>
+            <span class="link_name">Réclamation</span></a
+          >
+          <span class="tool_tip">Réclamation</span>
+        </li>
+        <li>
+          <a class="<%= activePage === 'factures' ? 'active-page' : '' %>" href="/factures"
+            ><i class="bx bx-notepad"></i>
+            <span class="link_name">Factures</span></a
+          >
+          <span class="tool_tip">Factures</span>
+        </li>
+        <li class="future-feature">
+          <a class="<%= activePage === 'retour' ? 'active-page' : '' %>" href="/retour"
+            ><i class="bx bx-arrow-back"></i>
+            <span class="link_name">Retour</span></a
+          >
+          <span class="tool_tip">Retour</span>
+        </li>
+      </ul> -->
+      <div class="profile">
+        <div class="profile-content">
+          <img src="/images/petite-fille.png" alt="photo de profile" />
+          <div class="name">Patrick OUEDRAOGO</div>
+        </div>
+        <i class="bx bx-log-out" id="log-out"></i>
+      </div>
+    </nav>
+    
+      
+
+    <div class="main-content">
+        <div class="header-bar">
+          <div id="header-search">
+            <form action="/table-data" method="POST">
+              <input id="header-search" class="header-search" name="header-search" type="text">
+              <button type="submit">
+                <i class="bx bx-search"></i>
+              </button>
+            </form>
+          </div>
+        </div>

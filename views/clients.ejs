@@ -1,0 +1,24 @@
+<%- include("partials/header") -%>
+<div class="client-body">
+  <h1>Clients</h1>
+  <div class="client-button">
+    <div class="client-button-left">
+      <button id="client-ajouter-nouveau" type="button">
+        <i class="bx bxs-plus-circle"></i>Ajouter Nouveau
+      </button>
+      <button type="button"><i class="bx bx-printer"></i></button>
+      <button type="button"><i class="fa-solid fa-sliders"></i></button>
+    </div>
+    <div class="client-button-right">
+      <button id="client-generer-rapport" type="button">
+        
+        <i class="bx bxs-file-export"></i>Générer un Rapport
+      </button>
+    </div>
+  </div>
+  <div class="client-table-container">
+    <div id="tableau-client"></div>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

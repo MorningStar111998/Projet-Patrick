@@ -1,0 +1,149 @@
+.fiche-body {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin: 1%;
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* min-width: 100%; */
+}
+
+.fiche-body-left {
+  max-width: 100%;
+  flex: 1;
+
+}
+
+.fiche-body-right {
+  display: none;
+  width: 50%;
+  font-size: 12px;
+  height: 100%;
+  flex: 1;
+}
+
+.fiche-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fiche-button-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-right: auto;
+}
+
+.fiche-button-right {
+  margin-left: auto;
+}
+
+button {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+  background: none;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+button i {
+  font-size: 24px;
+}
+
+#fiche-ajouter-nouveau {
+  background-color: #2748f4;
+  color: white;
+}
+#fiche-generer-rapport {
+  background-color: #ffb133;
+}
+
+/***************************Tableau*/
+#tableau-fiche-traitement .tabulator-footer-contents{padding-right: 50%;
+}
+
+
+.fiche-table-container {
+  margin-top: 3rem;
+  overflow: auto;
+
+}
+
+.code-format {
+  width: 95%;
+  height: 95%;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.cloturé {
+  background-color: #008001;
+  color: white;
+}
+
+.ouvert {
+  background-color: #ffb133;
+}
+
+/*************************Formulaire Test*/
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.myForm {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+}
+
+.myForm input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.myForm #fiche-button-fermer {
+  color: white;
+  background-color: red;
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  font-size: 6px;
+  padding: 2px;
+}
+
+.myForm #fiche-button-submit {
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block; /* Make the #fiche-button-submit full width */
+  grid-column: 3 / 4; /* Span all three columns */
+  grid-row: 7;
+  width: 50%;
+  margin: auto;
+}
+
+.myForm #fiche-button-submit:hover {
+  background-color: #45a049;
+}
+
