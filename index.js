@@ -1,6 +1,5 @@
 const express = require("express");
 const ejs = require("ejs");
-const db = require("./utils/database");
 const tableData = require("./utils/table-data");
 
 const PORT = 3309;
