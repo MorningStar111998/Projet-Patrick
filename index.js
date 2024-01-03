@@ -30,11 +30,24 @@ app.get("/fiche_a_facturer", (req, res) => {
   });
 });
 
+app.get("/fiche_a_charger", (req, res) => {
+  res.render("fiche_a_charger", {
+    activePage: "fiche_a_charger",
+  
+  });
+});
+
 
 app.get("/mes_factures", (req, res) => {
     res.render("mes_factures", {
       activePage: "mes_factures",
     });
+});
+
+app.get("/mes_charges", (req, res) => {
+  res.render("mes_charges", {
+    activePage: "mes_charges",
+  });
 });
 
 app.get("/tableau-fiche-data", (req, res) => {
@@ -48,6 +61,12 @@ app.get("/tableau-client-data", (req, res) => {
 
 //POST handlers
 app.post("/fiche_a_facturer", (req, res) => {
+  
+  console.log("POST request received successfully!");
+  
+});
+
+app.post("/fiche_a_charger", (req, res) => {
   
   console.log("POST request received successfully!");
   

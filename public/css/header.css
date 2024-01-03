@@ -17,7 +17,7 @@ body {
 .sidebar {
   font-family: "Noto Sans JP", sans-serif;
 
-  background: #2748F4;
+  background: #153d77;
   color: white;
   height: 100%;
   width: 60px;
@@ -297,7 +297,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /*gap: 10px;*/
 }
 
   .header-bar input{

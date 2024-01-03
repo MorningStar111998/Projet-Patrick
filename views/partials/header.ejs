@@ -101,6 +101,24 @@
             </li>
           </ul>
         </li>
+        <li class="toggle-menu">
+          <div class="icon-link">
+            <a href="#">
+              <i class="bx bx-package"></i>
+              <span class="link_name">Charges</span></a
+            >
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_charges' ? 'rotated' : '' %>"></i>
+            <span class="tool_tip">Charges</span>
+          </div>
+          <ul class="sub-menu <%= activePage === 'fiche_a_charger' || activePage === 'mes_charges' ? 'roll' : '' %>">
+            <li>
+              <a class="<%=activePage === 'fiche_a_charger' ? 'active-page' : '' %>" href="/fiche_a_charger"><i class="bx bx-plus"></i> Fiches à charger </a>
+            </li>
+            <li>
+              <a class="<%= activePage === 'mes_charges' ? 'active-page' : '' %>" href="/mes_charges"><i class="bx bx-list-ul"></i> Mes Charges </a>
+            </li>
+          </ul>
+        </li>
         <!-- <li class="future-feature toggle-menu">
           <div class="icon-link">
             <a href="#"
