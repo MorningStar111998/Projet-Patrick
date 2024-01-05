@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 
-const PORT = process.env.PORT || 3309;
+const PORT = process.env.PORT || 3310;
 
 
 const app = express();
@@ -44,9 +44,9 @@ app.get("/mes_factures", (req, res) => {
     });
 });
 
-app.get("/mes_charges", (req, res) => {
-  res.render("mes_charges", {
-    activePage: "mes_charges",
+app.get("/mes_fours", (req, res) => {
+  res.render("mes_fours", {
+    activePage: "mes_fours",
   });
 });
 
@@ -55,6 +55,9 @@ app.get("/tableau-fiche-data", (req, res) => {
 });
 app.get("/tableau-client-data", (req, res) => {
   res.json(tableData.tabledataClient);
+});
+app.get("/tableau-four-data", (req, res) => {
+  res.json(tableData.tabledataFour);
 });
 
 

@@ -3,38 +3,37 @@ $.ajax({
   type: "GET",
   success: function (data) {
     var eyeIcon = function (cell, formatterParams, onRendered) {
-      //plain text value
       return "<i class='fa-regular fa-eye'></i>";
     };
     var codeFormat = function (cell, formatterParams, onRendered) {
-      //plain text value
       return "<div class='code-format'></div>";
     };
     var optionIcon = function (cell, formatterParams, onRendered) {
-      //plain text value
       return '<i class="fa-solid fa-ellipsis-vertical"></i>';
     };
+
+    
 
     var table = new Tabulator("#tableau-fiche-traitement", {
       downloadRowRange: "active",
       printHeader: "<h1>Fiches à Facturer<h1>",
       printStyled: true,
       printConfig: {
-        columnHeaders: true, //do not include column headers in printed table
-        columnGroups: false, //do not include column groups in column headers for printed table
-        rowGroups: false, //do not include row groups in printed table
-        columnCalcs: false, //do not include column calcs in printed table
-        dataTree: false, //do not include data tree in printed table
-        formatCells: true, //show raw cell values without formatter
+        columnHeaders: true,
+        columnGroups: false,
+        rowGroups: false,
+        columnCalcs: false,
+        dataTree: false,
+        formatCells: true,
       },
       downloadConfig: {
         rowHeight: 60,
         height: "100%",
-        columnHeaders: true, //do not include column headers in downloaded table
-        columnGroups: true, //do not include column groups in column headers for downloaded table
-        rowGroups: true, //do not include row groups in downloaded table
-        columnCalcs: true, //do not include column calcs in downloaded table
-        dataTree: true, //do not include data tree in downloaded table
+        columnHeaders: true,
+        columnGroups: true,
+        rowGroups: true,
+        columnCalcs: true,
+        dataTree: true,
       },
       printAsHtml: true,
       height: 400,
@@ -95,12 +94,12 @@ $.ajax({
           },
           width: 100,
         },
-        { title: "Client", field: "client", width: 250, headerFilter: "input" },
-        { title: "Opérateur", field: "operateur", hozAlign: "left" , headerFilter: "input"},
-        { title: "Matière", field: "matiere", hozAlign: "left" , headerFilter: "input"},
-        { title: "Dureté", field: "durete", hozAlign: "left" , headerFilter: "input"},
-        { title: "Désignation", field: "designation", hozAlign: "left" , headerFilter: "input"},
-        { title: "QTE", field: "qte", hozAlign: "left" , headerFilter: "input"},
+        { title: "Client", field: "client", width: 250 },
+        { title: "Opérateur", field: "operateur", hozAlign: "left" },
+        { title: "Matière", field: "matiere", hozAlign: "left" },
+        { title: "Dureté", field: "durete", hozAlign: "left" },
+        { title: "Désignation", field: "designation", hozAlign: "left" },
+        { title: "QTE", field: "qte", hozAlign: "left" },
         {
           title: "Poids",
           field: "poids",
@@ -136,13 +135,12 @@ $.ajax({
     });
     $("#fiche-pdf").on("click", function () {
       table.download("pdf", "data.pdf", {
-        orientation: "landscape", //set page orientation to portrait
-        title: "Liste des demandes", //add title to report
+        orientation: "landscape",
+        title: "Liste des demandes",
       });
     });
     $("#fiche-imprimer").on("click", function () {
       table.print(false, true);
     });
-
   },
 });

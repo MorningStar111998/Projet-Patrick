@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="/css/clients.css" />
     <link rel="stylesheet" href="/css/fiche_a_facturer.css" /> 
     <link rel="stylesheet" href="/css/mes_factures.css" />
+    <link rel="stylesheet" href="/css/mes_fours.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -107,15 +108,15 @@
               <i class="bx bx-package"></i>
               <span class="link_name">Charges</span></a
             >
-            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_charges' ? 'rotated' : '' %>"></i>
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_fours' ? 'rotated' : '' %>"></i>
             <span class="tool_tip">Charges</span>
           </div>
-          <ul class="sub-menu <%= activePage === 'fiche_a_charger' || activePage === 'mes_charges' ? 'roll' : '' %>">
+          <ul class="sub-menu <%= activePage === 'fiche_a_charger' || activePage === 'mes_fours' ? 'roll' : '' %>">
             <li>
               <a class="<%=activePage === 'fiche_a_charger' ? 'active-page' : '' %>" href="/fiche_a_charger"><i class="bx bx-plus"></i> Fiches à charger </a>
             </li>
             <li>
-              <a class="<%= activePage === 'mes_charges' ? 'active-page' : '' %>" href="/mes_charges"><i class="bx bx-list-ul"></i> Mes Charges </a>
+              <a class="<%= activePage === 'mes_fours' ? 'active-page' : '' %>" href="/mes_fours"><i class="bx bx-list-ul"></i> Mes Fours </a>
             </li>
           </ul>
         </li>

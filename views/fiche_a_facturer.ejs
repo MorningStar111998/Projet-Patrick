@@ -23,6 +23,43 @@
         </button>
       </div>
     </div>
+    <div class="fiche-filtres-container">
+      <div class="fiche-filtres-champs">
+        <div class="fiche-filtre">
+          <input type="checkbox" name="checkbox" />
+          <select name="filtre-champ" class="filtre-champ" id="filtre-champ-1">
+            <option value="client">Client</option>
+            <option value="operateur">Opérateur</option>
+            <option value="matiere">Matière</option>
+            <option value="durete">Dureté</option>
+            <option value="designation">Désignation</option>
+            <option value="qte">QTE</option>
+            <option value="poids">Poids</option>
+            <option value="prof">Prof</option>
+            <option value="drtObt">DrtObt</option>
+            <option value="date">Date</option>
+            <option value="statut">Statut</option>
+            <option value="livraison">Livraison</option>
+          </select>
+          <select name="filtre-type" class="filtre-type" id="filtre-type-1">
+            <option value="=">Égale à</option>
+            <option value="!=">Différent de</option>
+            <option value="<">Inférieur</option>
+            <option value="<=">Inférieur ou égale à</option>
+            <option value=">">Supérieur</option>
+            <option value=">=">Supérieur ou égale à</option>
+          </select>
+          <input type="text" name="filtre-valeur" class="filtre-valeur" id="filtre-valeur-1"/>
+          <button type="button" class="remove-filtre" data-filtre-id="1" name="filtre-bouton">
+            <i class="fa fa-trash" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="fiche-filtres-boutons">
+        <button id="appliquer-filtre">Appliquer</button>
+        <button id="ajouter-filtre"><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
     <div class="fiche-table-container">
       <div id="tableau-fiche-traitement"></div>
     </div>
@@ -33,70 +70,90 @@
         <form class="myForm" id="myForm">
           <div class="input-container">
             <label for="code">Code:</label>
-            <input type="text" id="code" name="code" required />
+            <input type="text" id="code" name="code" required readonly />
           </div>
 
           <div class="input-container">
             <label for="client">Client:</label>
-            <input type="text" id="client" name="client" required />
+            <input type="text" id="client" name="client" required readonly />
           </div>
 
           <div class="input-container">
             <label for="operateur">Opérateur:</label>
-            <input type="text" id="operateur" name="operateur" required />
+            <input
+              type="text"
+              id="operateur"
+              name="operateur"
+              required
+              readonly
+            />
           </div>
 
           <div class="input-container">
             <label for="matiere">Matière:</label>
-            <input type="text" id="matiere" name="matiere" required />
+            <input type="text" id="matiere" name="matiere" required readonly />
           </div>
 
           <div class="input-container">
             <label for="durete">Dureté:</label>
-            <input type="text" id="durete" name="durete" required />
+            <input type="text" id="durete" name="durete" required readonly />
           </div>
 
           <div class="input-container">
             <label for="designation">Désignation:</label>
-            <input type="text" id="designation" name="designation" required />
+            <input
+              type="text"
+              id="designation"
+              name="designation"
+              required
+              readonly
+            />
           </div>
 
           <div class="input-container">
             <label for="qte">QTE:</label>
-            <input type="text" id="qte" name="qte" required />
+            <input type="text" id="qte" name="qte" required readonly />
           </div>
 
           <div class="input-container">
             <label for="poids">Poids:</label>
-            <input type="text" id="poids" name="poids" required />
+            <input type="text" id="poids" name="poids" required readonly />
           </div>
 
           <div class="input-container">
             <label for="prof">Prof:</label>
-            <input type="text" id="prof" name="prof" required />
+            <input type="text" id="prof" name="prof" required readonly />
           </div>
 
           <div class="input-container">
             <label for="drtObt">DrtObt:</label>
-            <input type="text" id="drtObt" name="drtObt" required />
+            <input type="text" id="drtObt" name="drtObt" required readonly />
           </div>
 
           <div class="input-container">
             <label for="date">Date:</label>
-            <input type="text" id="date" name="date" required />
+            <input type="text" id="date" name="date" required readonly />
           </div>
 
           <div class="input-container">
             <label for="statut">Statut:</label>
-            <input type="text" id="statut" name="statut" required />
+            <input type="text" id="statut" name="statut" required readonly />
           </div>
 
           <div class="input-container">
             <label for="livraison">Livraison:</label>
-            <input type="text" id="livraison" name="livraison" required />
+            <input
+              type="text"
+              id="livraison"
+              name="livraison"
+              required
+              readonly
+            />
           </div>
 
-          <button id="fiche-button-fermer" type="button"><i class="fa-solid fa-xmark"></i></button>
+          <button id="fiche-button-fermer" type="button">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
           <button id="fiche-button-submit" type="submit">Ok</button>
         </form>
       </div>
