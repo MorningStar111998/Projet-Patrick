@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/accueil.css" />
     <link rel="stylesheet" href="/css/clients.css" />
     <link rel="stylesheet" href="/css/fiche_a_facturer.css" /> 
-    <link rel="stylesheet" href="/css/mes_factures.css" />
+    <link rel="stylesheet" href="/css/imprimer_factures.css" />
     <link rel="stylesheet" href="/css/mes_fours.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,6 +45,7 @@
     <!-- Script pour télécharger Tableau en PDF-->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.20/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <!-- Script pour Thème Tableau Bootstrap 5-->
     <link href="/css/dist/css/tabulator_bulma.min.css" rel="stylesheet">
@@ -79,7 +80,7 @@
         </li>
         <li class="">
           <a class="<%= activePage === 'clients' ? 'active-page' : '' %>" href="/clients"
-            ><i class="bx bxs-truck"></i>
+            ><i class="fa-solid fa-user"></i>
             <span class="link_name">Clients</span></a
           >
           <span class="tool_tip">Clients</span>
@@ -87,57 +88,47 @@
         <li class="toggle-menu">
           <div class="icon-link">
             <a href="#">
-              <i class="bx bx-package"></i>
+              <i class="fa-solid fa-money-check-dollar"></i>
               <span class="link_name">Factures</span></a
             >
-            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_factures' ? 'rotated' : '' %>"></i>
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'imprimer_factures' ? 'rotated' : '' %>"></i>
             <span class="tool_tip">Factures</span>
           </div>
-          <ul class="sub-menu <%= activePage === 'fiche_a_facturer' || activePage === 'mes_factures' ? 'roll' : '' %>">
+          <ul class="sub-menu <%= activePage === 'fiche_a_facturer' || activePage === 'imprimer_factures' ? 'roll' : '' %>">
             <li>
-              <a class="<%=activePage === 'fiche_a_facturer' ? 'active-page' : '' %>" href="/fiche_a_facturer"><i class="bx bx-plus"></i> Fiche à Facturer </a>
+              <a class="<%=activePage === 'fiche_a_facturer' ? 'active-page' : '' %>" href="/fiche_a_facturer"><i class="bx bx-plus"></i> Fiches à Facturer </a>
             </li>
             <li>
-              <a class="<%= activePage === 'mes_factures' ? 'active-page' : '' %>" href="/mes_factures"><i class="bx bx-list-ul"></i> Mes Factures </a>
+              <a class="<%= activePage === 'imprimer_factures' ? 'active-page' : '' %>" href="/imprimer_factures"><i class="fa-solid fa-table-list"></i>Imprimer Factures </a>
             </li>
           </ul>
         </li>
         <li class="toggle-menu">
           <div class="icon-link">
             <a href="#">
-              <i class="bx bx-package"></i>
+              <i class="fa-solid fa-file-waveform"></i>
               <span class="link_name">Charges</span></a
             >
-            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'mes_fours' ? 'rotated' : '' %>"></i>
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_charger' || activePage === 'mes_charges' ? 'rotated' : '' %>"></i>
             <span class="tool_tip">Charges</span>
           </div>
-          <ul class="sub-menu <%= activePage === 'fiche_a_charger' || activePage === 'mes_fours' ? 'roll' : '' %>">
+          <ul class="sub-menu <%= activePage === 'fiche_a_charger' || activePage === 'mes_charges' ? 'roll' : '' %>">
             <li>
               <a class="<%=activePage === 'fiche_a_charger' ? 'active-page' : '' %>" href="/fiche_a_charger"><i class="bx bx-plus"></i> Fiches à charger </a>
             </li>
             <li>
-              <a class="<%= activePage === 'mes_fours' ? 'active-page' : '' %>" href="/mes_fours"><i class="bx bx-list-ul"></i> Mes Fours </a>
+              <a class="<%= activePage === 'mes_charges' ? 'active-page' : '' %>" href="/mes_charges"><i class="bx bx-list-ul"></i> Mes Charges </a>
             </li>
           </ul>
         </li>
-        <!-- <li class="future-feature toggle-menu">
-          <div class="icon-link">
-            <a href="#"
-              ><i class="bx bx-box"></i> <span class="link_name">Stock</span></a
-            >
-            <i class="chevron bx bxs-chevron-right <%= activePage === 'ajouter_produit' || activePage === 'mon_stock' ? 'rotated' : '' %>"></i>
-            <span class="tool_tip">Stock</span>
-          </div>
-          <ul class="sub-menu <%= activePage === 'ajouter_produit' || activePage === 'mon_stock' ? 'roll' : '' %>">
-            <li>
-              <a class="<%= activePage === 'ajouter_produit' ? 'active-page' : '' %>" href="/ajouter_produit"><i class="bx bx-plus"></i> Ajouter Produit </a>
-            </li>
-            <li>
-              <a class="<%= activePage === 'mon_stock' ? 'active-page' : '' %>" href="/mon_stock"><i class="bx bx-list-ul"></i> Mon Stock </a>
-            </li>
-          </ul>
+        <li class="">
+          <a class="<%= activePage === 'mes_fours' ? 'active-page' : '' %>" href="/mes_fours"
+            ><i class="bx bxs-truck"></i>
+            <span class="link_name">Fours</span></a
+          >
+          <span class="tool_tip">Fours</span>
         </li>
-        
+        <!-- 
         <li class="future-feature">
           <a class="<%= activePage === 'reclamation' ? 'active-page' : '' %>" href="/reclamation"
             ><i class="bx bx-headphone"></i>

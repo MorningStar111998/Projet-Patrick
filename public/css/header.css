@@ -140,15 +140,22 @@ body {
   overflow: hidden;
   width: 100%;
   transition: max-height 0.5s ease;
+  transform: translateX(20px);
+
+
+
 }
 
 .sidebar ul.menu li.toggle-menu .sub-menu.roll {
   max-height: 200px;
   transform: translateY(0px);
+  transform: translateX(20px);
+
 }
 
 .sidebar ul.menu li.toggle-menu .sub-menu li a{
-  width: 90%;
+  width: 80%;
+  
 
 }
 

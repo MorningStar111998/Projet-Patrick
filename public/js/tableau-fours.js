@@ -42,5 +42,18 @@ $.ajax({
     table.on("rowClick", function (e, row) {
       alert("Row " + row.getData().id + " Clicked!!!!");
     });
+
+    $("#four-generer-rapport").on("click", function () {
+      table.download("xlsx", "data.xlsx", { sheetName: "Liste des demandes" });
+    });
+    $("#four-pdf").on("click", function () {
+      table.download("pdf", "data.pdf", {
+        orientation: "landscape",
+        title: "Liste des demandes",
+      });
+    });
+    $("#four-imprimer").on("click", function () {
+      table.print(false, true);
+    });
   },
 });

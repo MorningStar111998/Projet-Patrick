@@ -30,17 +30,21 @@ app.get("/fiche_a_facturer", (req, res) => {
   });
 });
 
+app.get("/imprimer_factures", (req, res) => {
+    res.render("imprimer_factures", {
+      activePage: "imprimer_factures",
+    });
+});
+
 app.get("/fiche_a_charger", (req, res) => {
   res.render("fiche_a_charger", {
     activePage: "fiche_a_charger",
-  
   });
 });
 
-
-app.get("/mes_factures", (req, res) => {
-    res.render("mes_factures", {
-      activePage: "mes_factures",
+app.get("/mes_charges", (req, res) => {
+    res.render("mes_charges", {
+      activePage: "mes_charges",
     });
 });
 

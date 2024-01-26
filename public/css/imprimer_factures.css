@@ -1,0 +1,18 @@
+.imprimer-factures{
+    display: flex;
+    flex-direction: row;
+}
+.imprimer-factures > div{
+    flex: 1;
+}
+
+.preview-facture-header-left{
+    text-align: left;
+}
+
+.preview-facture-header-right{
+    text-align: right;
+}
+#preview-facture-logo{
+    width: 140px;
+}

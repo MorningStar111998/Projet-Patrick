@@ -27,6 +27,7 @@ function addFiltre() {
 function removeFiltre(filtreId) {
     console.log("remove function triggered");
   $(`.fiche-filtre[data-filtre-id="${filtreId}"]`).remove();
+  filtreCounter--;
 }
 
 // Event handler for the "Add Filtre" button
