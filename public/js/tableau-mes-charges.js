@@ -1,5 +1,5 @@
 $.ajax({
-  url: "/tableau-four-data",
+  url: "/tableau-mes-charges-data",
   type: "GET",
   success: function (data) {
     var optionIcon = function (cell, formatterParams, onRendered) {
@@ -10,7 +10,7 @@ $.ajax({
     var table = new Tabulator("#tableau-four", {
       height: 400,
       data: data,
-      layout: "fitDataTable",
+      layout: "fitColumns",
       pagination: true,
       columns: [
         {
@@ -23,50 +23,25 @@ $.ajax({
           download: false,
           width: 40,
         },
+        { title: "ID", field: "id", width: 450 },
         { title: "Nom Four", field: "nomFour" },
-        { title: "Poids maximal de charge (kg)", field: "poidsMax" },
-        { title: "Température Max", field: "tempMax", hozAlign: "left" },
-        {
-          title: "Etat de la Charge",
-          field: "etatCharge",
-          formatter: function (row, formatterParams) {
-            var statut = row.getData().etatCharge;
-            var value = row.getData().etatCharge;
-            return (
-              "<div class=' " + statut + " code-format'>" + value + "</div>"
-            );
-          },
-        },
+        { title: "Type", field: "type", hozAlign: "left" },
+        { title: "Description", field: "description" },
+        { title: "Etat Four", field: "etatFour" },
         { title: "ID Charge en cours", field: "idcharge" },
-        { title: "Date Fin de Charge", field: "dateTimeFin" },
-        { title: "Numéro Prochaine Charge", field: "numChargeProchain" },
         {
           title: "",
           field: "option",
           formatter: optionIcon,
           hozAlign: "center",
           width: 30,
-          cellClick: function (e, row) {
-            var modal = $("#modifier-four-modal");
-
-            console.log("appear");
-            modal.css("display", "block");
-
-            var rowClicked = row.getData();
-
-            Object.entries(rowClicked).forEach((field) => {
-              var element = document.getElementById(field[0]);
-              console.log(element);
-              if (element) {
-                element.value = field[1];
-              }
-            });
-          },
         },
       ],
     });
 
-    
+    table.on("rowClick", function (e, row) {
+      alert("Row " + row.getData().id + " Clicked!!!!");
+    });
 
     $("#four-generer-rapport").on("click", function () {
       table.download("xlsx", "data.xlsx", { sheetName: "Liste des demandes" });

@@ -30,9 +30,9 @@ app.get("/fiche_a_facturer", (req, res) => {
   });
 });
 
-app.get("/imprimer_factures", (req, res) => {
-    res.render("imprimer_factures", {
-      activePage: "imprimer_factures",
+app.get("/factures", (req, res) => {
+    res.render("factures", {
+      activePage: "factures",
     });
 });
 
@@ -62,6 +62,9 @@ app.get("/tableau-client-data", (req, res) => {
 });
 app.get("/tableau-four-data", (req, res) => {
   res.json(tableData.tabledataFour);
+});
+app.get("/tableau-mes-charges-data", (req, res) => {
+  res.json(tableData.tabledataMesCharges);
 });
 
 

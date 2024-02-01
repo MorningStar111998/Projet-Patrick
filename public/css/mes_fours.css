@@ -1,10 +1,10 @@
-.four-body{
+.four-body {
   padding: 20px;
   margin: 1%;
   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.1);
 }
 
-.four-button{
+.four-button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,7 @@
   margin-left: auto;
 }
 
-button{
+button {
   padding: 10px;
   font-size: 16px;
   border-radius: 4px;
@@ -34,19 +34,171 @@ button{
   gap: 4px;
 }
 
-button i{
+button i {
   font-size: 24px;
 }
 
-#four-ajouter-nouveau{
-  background-color: #153d77;;
+#bouton-ajouter-nouveau-four {
+  background-color: #153d77;
   color: white;
-  
 }
-#four-generer-rapport{
-  background-color: #FFB133;
+#four-generer-rapport {
+  background-color: #ffb133;
 }
 
-.four-table-container{
+.four-table-container {
   margin-top: 3rem;
+}
+
+/*Formulaire four*/
+
+#ajouter-four-formulaire {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 10%;
+  border-radius: 4px;
+}
+#ajouter-four-formulaire label {
+  padding: 4px 16px;
+  display: block;
+  color: black;
+}
+
+#ajouter-four-formulaire input {
+  padding: 4px 16px;
+  border: solid rgb(199, 199, 199) 1px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+}
+
+.ajouter-four-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.ajouter-four-close {
+  color: black;
+  background-color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.ajouter-four-close:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.ajouter-four-close:active {
+  transform: translateY(5px);
+  box-shadow: 3px 3px 3px black;
+}
+
+#ajouter-four-bouton {
+  width: 90%;
+  background-color: #153d77;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/***************Modifier-formulaire*/
+
+#modifier-four-formulaire {
+  background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+  width: 80%;
+  height: 60vh;
+  margin-left: 15%;
+  margin-top: 10%;
+  border-radius: 4px;
+  padding: 15px;
+}
+
+.modifier-four-formulaire-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  margin: auto;
+  row-gap: 2%;
+  column-gap: 5%;
+}
+
+#modifier-four-formulaire label {
+  padding: 4px 16px;
+  display: block;
+  color: black;
+}
+
+#modifier-four-formulaire input,
+#modifier-four-formulaire select {
+  padding: 4px 16px;
+  border: solid rgb(199, 199, 199) 1px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  width: 100%;
+  
+}
+
+.modifier-four-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modifier-four-close {
+  color: black;
+  background-color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.modifier-four-close:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.modifier-four-close:active {
+  transform: translateY(5px);
+  box-shadow: 3px 3px 3px black;
+}
+
+#modifier-four-bouton {
+  /* width: 90%; */
+  background-color: #153d77;
+  color: white;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10%;
+}
+
+#modifier-four-formulaire h3{
+  margin-left: 10%;
 }

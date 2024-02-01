@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="/css/accueil.css" />
     <link rel="stylesheet" href="/css/clients.css" />
     <link rel="stylesheet" href="/css/fiche_a_facturer.css" /> 
-    <link rel="stylesheet" href="/css/imprimer_factures.css" />
+    <link rel="stylesheet" href="/css/factures.css" />
     <link rel="stylesheet" href="/css/mes_fours.css" />
     
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,24 +85,7 @@
           >
           <span class="tool_tip">Clients</span>
         </li>
-        <li class="toggle-menu">
-          <div class="icon-link">
-            <a href="#">
-              <i class="fa-solid fa-money-check-dollar"></i>
-              <span class="link_name">Factures</span></a
-            >
-            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'imprimer_factures' ? 'rotated' : '' %>"></i>
-            <span class="tool_tip">Factures</span>
-          </div>
-          <ul class="sub-menu <%= activePage === 'fiche_a_facturer' || activePage === 'imprimer_factures' ? 'roll' : '' %>">
-            <li>
-              <a class="<%=activePage === 'fiche_a_facturer' ? 'active-page' : '' %>" href="/fiche_a_facturer"><i class="bx bx-plus"></i> Fiches à Facturer </a>
-            </li>
-            <li>
-              <a class="<%= activePage === 'imprimer_factures' ? 'active-page' : '' %>" href="/imprimer_factures"><i class="fa-solid fa-table-list"></i>Imprimer Factures </a>
-            </li>
-          </ul>
-        </li>
+
         <li class="toggle-menu">
           <div class="icon-link">
             <a href="#">
@@ -121,6 +104,26 @@
             </li>
           </ul>
         </li>
+        
+        <li class="toggle-menu">
+          <div class="icon-link">
+            <a href="#">
+              <i class="fa-solid fa-money-check-dollar"></i>
+              <span class="link_name">Factures</span></a
+            >
+            <i class="chevron bx bxs-chevron-right <%= activePage === 'fiche_a_facturer' || activePage === 'factures' ? 'rotated' : '' %>"></i>
+            <span class="tool_tip">Factures</span>
+          </div>
+          <ul class="sub-menu <%= activePage === 'fiche_a_facturer' || activePage === 'factures' ? 'roll' : '' %>">
+            <li>
+              <a class="<%=activePage === 'fiche_a_facturer' ? 'active-page' : '' %>" href="/fiche_a_facturer"><i class="bx bx-plus"></i> Fiches à Facturer </a>
+            </li>
+            <li>
+              <a class="<%= activePage === 'factures' ? 'active-page' : '' %>" href="/factures"><i class="fa-solid fa-table-list"></i>Factures </a>
+            </li>
+          </ul>
+        </li>
+        
         <li class="">
           <a class="<%= activePage === 'mes_fours' ? 'active-page' : '' %>" href="/mes_fours"
             ><i class="bx bxs-truck"></i>

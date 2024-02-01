@@ -1,0 +1,53 @@
+<div id="modifier-four-modal" class="modifier-four-modal">
+  <span class="modifier-four-close">&times;</span>
+  <form id="modifier-four-formulaire">
+    <h3>Modifier Four</h3>
+    <br>
+    <div class="modifier-four-formulaire-container">
+      <div class="input-container">
+        <label for="nomFour">Nom du Four:</label>
+        <input type="text" id="nomFour" name="nomFour" required />
+      </div>
+
+      <div class="input-container">
+        <label for="poidsMax">Poids Maximum:</label>
+        <input type="text" id="poidsMax" name="poidsMax" required />
+      </div>
+
+      <div class="input-container">
+        <label for="tempMax">Température Maximum:</label>
+        <input type="text" id="tempMax" name="tempMax" required />
+      </div>
+
+      <div class="input-container">
+        <label for="etatCharge">État de la Charge:</label>
+        <select id="etatCharge" name="etatCharge" required>
+          <option value="ouvert">Ouvert</option>
+          <option value="cloturé">Clôturé</option>
+        </select>
+      </div>
+
+      <div class="input-container">
+        <label for="idcharge">ID de la Charge:</label>
+        <input type="text" id="idcharge" name="idcharge" required />
+      </div>
+
+      <div class="input-container">
+        <label for="dateTimeFin">Date et Heure de Fin:</label>
+        <input type="text" id="dateTimeFin" name="dateTimeFin" />
+      </div>
+
+      <div class="input-container">
+        <label for="numChargeProchain">Numéro de la Prochaine Charge:</label>
+        <input
+          type="text"
+          id="numChargeProchain"
+          name="numChargeProchain"
+          required
+        />
+      </div>
+    </div>
+
+    <button id="modifier-four-bouton" type="submit">modifier Four</button>
+  </form>
+</div>
