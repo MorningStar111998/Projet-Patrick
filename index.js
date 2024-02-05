@@ -4,9 +4,7 @@ const tableData = require("./utils/table-data");
 const dotenv = require("dotenv");
 dotenv.config();
 
-
 const PORT = process.env.PORT || 3310;
-
 
 const app = express();
 
@@ -26,14 +24,13 @@ app.get("/clients", (req, res) => {
 app.get("/fiche_a_facturer", (req, res) => {
   res.render("fiche_a_facturer", {
     activePage: "fiche_a_facturer",
-  
   });
 });
 
 app.get("/factures", (req, res) => {
-    res.render("factures", {
-      activePage: "factures",
-    });
+  res.render("factures", {
+    activePage: "factures",
+  });
 });
 
 app.get("/fiche_a_charger", (req, res) => {
@@ -43,9 +40,9 @@ app.get("/fiche_a_charger", (req, res) => {
 });
 
 app.get("/mes_charges", (req, res) => {
-    res.render("mes_charges", {
-      activePage: "mes_charges",
-    });
+  res.render("mes_charges", {
+    activePage: "mes_charges",
+  });
 });
 
 app.get("/mes_fours", (req, res) => {
@@ -53,33 +50,38 @@ app.get("/mes_fours", (req, res) => {
     activePage: "mes_fours",
   });
 });
-
-app.get("/tableau-fiche-data", (req, res) => {
-  res.json(tableData.tabledataFiche);
+app.get("/ajouter-facture-formulaire", (req, res) => {
+  res.render("partials/ajouter-facture-formulaire", {
+    activePage: "ajouter-facture-formulaire",
+  });
 });
+
 app.get("/tableau-client-data", (req, res) => {
   res.json(tableData.tabledataClient);
 });
-app.get("/tableau-four-data", (req, res) => {
-  res.json(tableData.tabledataFour);
+app.get("/tableau-fiche-a-charger-data", (req, res) => {
+  res.json(tableData.tabledataFicheCharger);
 });
 app.get("/tableau-mes-charges-data", (req, res) => {
   res.json(tableData.tabledataMesCharges);
 });
-
-
+app.get("/tableau-fiche-a-facturer-data", (req, res) => {
+  res.json(tableData.tabledataFicheFacturer);
+});
+app.get("/tableau-factures-data", (req, res) => {
+  res.json(tableData.tabledataFactures);
+});
+app.get("/tableau-four-data", (req, res) => {
+  res.json(tableData.tabledataFour);
+});
 
 //POST handlers
 app.post("/fiche_a_facturer", (req, res) => {
-  
   console.log("POST request received successfully!");
-  
 });
 
 app.post("/fiche_a_charger", (req, res) => {
-  
   console.log("POST request received successfully!");
-  
 });
 
 app.listen(PORT, () => {

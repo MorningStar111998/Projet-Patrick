@@ -1,0 +1,76 @@
+<%- include("partials/header") -%>
+
+<div class="charge-body">
+  <h1>Charges</h1>
+  <div class="facture-filtres-container">
+    <div class="facture-filtres-champs">
+      <div class="facture-filtre">
+        <input type="checkbox" name="checkbox" />
+        <select name="filtre-champ" class="filtre-champ" id="filtre-champ-1">
+          <option value="client">Client</option>
+          <option value="operateur">Opérateur</option>
+          <option value="matiere">Matière</option>
+          <option value="durete">Dureté</option>
+          <option value="designation">Désignation</option>
+          <option value="qte">QTE</option>
+          <option value="poids">Poids</option>
+          <option value="prof">Prof</option>
+          <option value="drtObt">DrtObt</option>
+          <option value="date">Date</option>
+          <option value="statut">Statut</option>
+          <option value="livraison">Livraison</option>
+        </select>
+        <select name="filtre-type" class="filtre-type" id="filtre-type-1">
+          <option value="=">Égale à</option>
+          <option value="!=">Différent de</option>
+          <option value="<">Inférieur</option>
+          <option value="<=">Inférieur ou égale à</option>
+          <option value=">">Supérieur</option>
+          <option value=">=">Supérieur ou égale à</option>
+        </select>
+        <input
+          type="text"
+          name="filtre-valeur"
+          class="filtre-valeur"
+          id="filtre-valeur-1"
+        />
+        <button
+          type="button"
+          class="remove-filtre"
+          data-filtre-id="1"
+          name="filtre-bouton"
+        >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    <div class="facture-filtres-boutons">
+      <button id="appliquer-filtre">Appliquer</button>
+      <button id="ajouter-filtre"><i class="fa-solid fa-plus"></i></button>
+    </div>
+  </div>
+  <div class="charge-button">
+    <div class="charge-button-left">
+      <button id="bouton-ajouter-nouveau-charge" type="button">
+        <i class="bx bxs-plus-circle"></i>Ajouter Charge
+      </button>
+      <button id="charge-imprimer" type="button">
+        <i class="bx bx-printer"></i>
+      </button>
+      <button type="button"><i class="fa-solid fa-sliders"></i></button>
+      <button id="charge-pdf" type="button">
+        <i class="fa-solid fa-file-pdf"></i>
+      </button>
+    </div>
+    <div class="charge-button-right">
+      <button id="charge-generer-rapport" type="button">
+        <i class="bx bxs-file-export"></i>Générer un Rapport
+      </button>
+    </div>
+  </div>
+  <div class="charge-table-container">
+    <div id="tableau-mes-charges"></div>
+  </div>
+</div>
+
+<%- include("partials/footer") -%>

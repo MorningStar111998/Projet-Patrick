@@ -1,5 +1,5 @@
 $.ajax({
-  url: "/tableau-fiche-data",
+  url: "/tableau-factures-data",
   type: "GET",
   success: function (data) {
     var eyeIcon = function (cell, formatterParams, onRendered) {
@@ -12,11 +12,9 @@ $.ajax({
       return '<i class="fa-solid fa-ellipsis-vertical"></i>';
     };
 
-    
-
-    var table = new Tabulator("#tableau-fiche-traitement", {
+    var table = new Tabulator("#tableau-factures", {
       downloadRowRange: "active",
-      printHeader: "<h1>Fiches à Facturer<h1>",
+      printHeader: "<h1>Factures<h1>",
       printStyled: true,
       printConfig: {
         columnHeaders: true,
@@ -38,7 +36,7 @@ $.ajax({
       printAsHtml: true,
       height: 400,
       data: data,
-      layout: "fitDataTable",
+      layout: "fitDataColumns",
       pagination: true,
       columns: [
         {
@@ -53,7 +51,7 @@ $.ajax({
           print: false,
         },
         {
-          title: "Preview",
+          title: "Modifier Fiche",
           formatter: eyeIcon,
           download: false,
           hozAlign: "center",
@@ -69,65 +67,29 @@ $.ajax({
                 element.value = field[1];
               }
             });
-
-            console.log(row.getData().statut);
-            if ($(".fiche-body-right").css("display") === "none") {
-              $(".fiche-body-right").css("display", "block");
-              $(".fiche-body-left").css("width", "50%");
-            }
-            $("#fiche-button-fermer").on("click", function () {
-              $(".fiche-body-right").css("display", "none");
-              $(".fiche-body-left").css("width", "100%");
-            });
           },
         },
 
+        { title: "Raison Sociale", field: "raisonSociale", hozAlign: "left" },
+        { title: "Ice", field: "ice", hozAlign: "left" },
+        { title: "Nom Contact", field: "nomContact", hozAlign: "left" },
+        { title: "Tel", field: "tel", hozAlign: "left" },
+        { title: "Email", field: "email", hozAlign: "left" },
         {
-          title: "Code",
-          field: "code",
-          formatter: function (row, formatterParams) {
-            var statut = row.getData().statut;
-            var value = row.getData().code;
-            return (
-              "<div class=' " + statut + " code-format'>" + value + "</div>"
-            );
-          },
-          width: 100,
-        },
-        { title: "Client", field: "client", width: 250 },
-        { title: "Opérateur", field: "operateur", hozAlign: "left" },
-        { title: "Matière", field: "matiere", hozAlign: "left" },
-        { title: "Dureté", field: "durete", hozAlign: "left" },
-        { title: "Désignation", field: "designation", hozAlign: "left" },
-        { title: "QTE", field: "qte", hozAlign: "left" },
-        {
-          title: "Poids",
-          field: "poids",
+          title: "Adresse Facturation",
+          field: "adresseFacturation",
           hozAlign: "left",
-          width: 90,
-          formatter: "money",
-          formatterParams: {
-            decimal: ",",
-            thousand: ".",
-            symbol: "g",
-            symbolAfter: "p",
-            negativeSign: true,
-            precision: false,
-          },
         },
-        { title: "Prof", field: "prof", hozAlign: "left" },
-        { title: "DrtObt", field: "drtObt", hozAlign: "left" },
-        { title: "Date", field: "date", hozAlign: "left", sorter: "date" },
-        { title: "Statut", field: "statut", hozAlign: "left" },
-        { title: "Livraison", field: "livraison", hozAlign: "left" },
         {
-          title: "",
-          field: "option",
-          formatter: optionIcon,
-          hozAlign: "center",
-          width: 30,
-          print: false,
+          title: "Adresse Livraison",
+          field: "adresseLivraison",
+          hozAlign: "left",
         },
+        { title: "Date Facture", field: "dateFacture", hozAlign: "left" },
+        { title: "Date Livraison", field: "dateLivraison", hozAlign: "left" },
+        { title: "Total Ht", field: "totalHt", hozAlign: "left" },
+        { title: "Taux Tva", field: "tauxTva", hozAlign: "left" },
+        { title: "Total Ttc", field: "totalTtc", hozAlign: "left" },
       ],
     });
     $("#fiche-generer-rapport").on("click", function () {

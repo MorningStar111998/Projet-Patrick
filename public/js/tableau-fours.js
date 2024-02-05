@@ -8,6 +8,27 @@ $.ajax({
     };
 
     var table = new Tabulator("#tableau-four", {
+      downloadRowRange: "active",
+      printHeader: "<h1>Fours<h1>",
+      printStyled: true,
+      printConfig: {
+        columnHeaders: true,
+        columnGroups: false,
+        rowGroups: false,
+        columnCalcs: false,
+        dataTree: false,
+        formatCells: true,
+      },
+      downloadConfig: {
+        rowHeight: 60,
+        height: "100%",
+        columnHeaders: true,
+        columnGroups: true,
+        rowGroups: true,
+        columnCalcs: true,
+        dataTree: true,
+      },
+      printAsHtml: true,
       height: 400,
       data: data,
       layout: "fitDataTable",
@@ -23,6 +44,30 @@ $.ajax({
           download: false,
           width: 40,
         },
+        {
+          title: "",
+          field: "option",
+          formatter: optionIcon,
+          hozAlign: "center",
+          width: 30,
+          cellClick: function (e, row) {
+            var modal = $("#modifier-four-modal");
+
+            console.log("appear");
+            modal.css("display", "block");
+
+            var rowClicked = row.getData();
+
+            Object.entries(rowClicked).forEach((field) => {
+              var element = document.getElementById(field[0]);
+              console.log(element.value);
+              if (element) {
+                element.value = field[1];
+              }
+            });
+          },
+        },
+
         { title: "Nom Four", field: "nomFour" },
         { title: "Poids maximal de charge (kg)", field: "poidsMax" },
         { title: "Température Max", field: "tempMax", hozAlign: "left" },
@@ -40,29 +85,6 @@ $.ajax({
         { title: "ID Charge en cours", field: "idcharge" },
         { title: "Date Fin de Charge", field: "dateTimeFin" },
         { title: "Numéro Prochaine Charge", field: "numChargeProchain" },
-        {
-          title: "",
-          field: "option",
-          formatter: optionIcon,
-          hozAlign: "center",
-          width: 30,
-          cellClick: function (e, row) {
-            var modal = $("#modifier-four-modal");
-
-            console.log("appear");
-            modal.css("display", "block");
-
-            var rowClicked = row.getData();
-
-            Object.entries(rowClicked).forEach((field) => {
-              var element = document.getElementById(field[0]);
-              console.log(element);
-              if (element) {
-                element.value = field[1];
-              }
-            });
-          },
-        },
       ],
     });
 

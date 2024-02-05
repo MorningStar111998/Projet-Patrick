@@ -16,6 +16,27 @@ $.ajax({
     };
 
     var table = new Tabulator("#tableau-client", {
+      downloadRowRange: "active",
+      printHeader: "<h1>Clients<h1>",
+      printStyled: true,
+      printConfig: {
+        columnHeaders: true,
+        columnGroups: false,
+        rowGroups: false,
+        columnCalcs: false,
+        dataTree: false,
+        formatCells: true,
+      },
+      downloadConfig: {
+        rowHeight: 60,
+        height: "100%",
+        columnHeaders: true,
+        columnGroups: true,
+        rowGroups: true,
+        columnCalcs: true,
+        dataTree: true,
+      },
+      printAsHtml: true,
       height: 400,
       data: data,
       layout: "fitColumns",
