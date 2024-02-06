@@ -1,4 +1,6 @@
-* {
+*,
+html,
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +13,6 @@ body {
   width: 100%;
   overflow: hidden;
   font-family: "Noto Sans JP", sans-serif;
-
 }
 
 .sidebar {
@@ -102,7 +103,6 @@ body {
   margin-top: 28px;
   transition: all 0.5s ease;
   height: 70%;
-
 }
 
 .sidebar ul.menu li {
@@ -132,7 +132,7 @@ body {
 
 .sidebar.active ul.menu li .chevron.rotated {
   transform: rotate(90deg);
-  transition: transform 0.5s ease; 
+  transition: transform 0.5s ease;
 }
 
 .sidebar ul.menu li.toggle-menu .sub-menu {
@@ -141,22 +141,16 @@ body {
   width: 100%;
   transition: max-height 0.5s ease;
   transform: translateX(20px);
-
-
-
 }
 
 .sidebar ul.menu li.toggle-menu .sub-menu.roll {
   max-height: 200px;
   transform: translateY(0px);
   transform: translateX(20px);
-
 }
 
-.sidebar ul.menu li.toggle-menu .sub-menu li a{
+.sidebar ul.menu li.toggle-menu .sub-menu li a {
   width: 80%;
-  
-
 }
 
 .sidebar ul.menu li .tool_tip {
@@ -228,7 +222,7 @@ body {
   align-items: center;
   width: 50px;
   transition: all 0.5s ease;
-  background:none;
+  background: none;
 }
 
 .sidebar.active .profile {
@@ -274,7 +268,6 @@ body {
   bottom: 0px;
 }
 
-
 .main-content {
   position: absolute;
   left: 60px;
@@ -300,14 +293,14 @@ body {
   font-size: 2rem;
 }
 
-#header-search form{
+#header-search form {
   display: flex;
   justify-content: center;
   align-items: center;
   /*gap: 10px;*/
 }
 
-  .header-bar input{
+.header-bar input {
   padding: 4px 16px;
   border: solid rgb(199, 199, 199) 1px;
   border-radius: 20px;
@@ -315,22 +308,18 @@ body {
   color: black;
 }
 
-.header-bar button{
+.header-bar button {
   background: none;
   border: none;
   font-size: 24px;
 }
 
-.active-page{
+.active-page {
   background-color: black;
 }
-
 
 /***************************General*/
 button:active {
   box-shadow: 0 1px #666;
   transform: translateY(4px);
 }
-
-
-

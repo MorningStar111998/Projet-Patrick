@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#ajouter-facture-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background-color: red;
+  color: black;
+  z-index: 1000;
+}
+
+.ajouter-facture-body-modal {
+  z-index: 999;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.ajouter-facture-body {
+  display: flex;
+  font-family: "Noto Sans JP", sans-serif;
+  gap: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ajouter-facture-body-formulaire,
+.ajouter-facture-body-viewer {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  min-width: 10rem;
+  overflow: scroll;
+}
+
+.ajouter-facture-body-formulaire {
+  border-right: 2px solid black;
+}
+
+form#ajouter-facture-formulaire .grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  row-gap: 15px;
+  column-gap: 15px;
+  align-items: center;
+}
+.ajouter-facture-formulaire-section-title {
+  grid-column: span 2;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.infos-generales {
+  margin-top: 40px;
+}
+
+#ajouter-facture-formulaire label {
+  text-align: right;
+  color: #00929c;
+  font-weight: bold;
+}
+
+#ajouter-facture-formulaire input,
+#ajouter-facture-formulaire select {
+  border: none;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+/* Tableau */
+.tableau-pieces-facture-container {
+  margin-top: 3rem;
+  overflow: auto;
+}
+
+.tableau-pieces-facture-container-buttons {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tableau-pieces-facture-container-buttons button {
+  padding: 5px;
+  border-radius: 2px;
+  color: #00929c;
+  border: #00929c solid 1px;
+}

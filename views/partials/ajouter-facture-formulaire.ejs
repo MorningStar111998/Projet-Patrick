@@ -1,59 +1,86 @@
-<div class="ajouter-facture-body">
-  <div class="ajouter-facture-body-formulaire">
-    
-    <form action="" id="ajouter-facture-formulaire">
-        <div class="infos-Client">
+<div class="ajouter-facture-body-modal" id="ajouter-facture-body-modal">
+  <div class="ajouter-facture-body">
+        <button id="ajouter-facture-close-button"><i class="fa-solid fa-xmark"></i></button>
+    <div class="resizable ajouter-facture-body-formulaire">
+      <form action="" id="ajouter-facture-formulaire">
+        <div class="infos-Client grid-container">
+          <h3 class="ajouter-facture-formulaire-section-title">
+            Rubrique Client:
+          </h3>
 
-            <h3>Rubrique Client:</h3>
-            
-            <label for="raisonSociale">Raison sociale:</label>
-            <select id="raisonSociale" class="select2" required>
-                <!-- Options for Raison sociale (populate as needed) -->
-                <option value="company1">Company 1</option>
-                <option value="company2">Company 2</option>
-                <!-- Add more options as needed -->
-            </select>
-            
-            <label for="ice">ICE:</label>
-            <input type="text" id="ice" name="ice" required>
-            
-            <label for="nomContact">Nom contact:</label>
-            <input type="text" id="nomContact" name="nomContact" required>
-            
-            <label for="tel">Tel:</label>
-            <input type="tel" id="tel" name="tel" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="adresseFacturation">Adresse de facturation:</label>
-            <input type="text" id="adresseFacturation" name="adresseFacturation" required>
-            
-            <label for="adresseLivraison">Adresse de livraison:</label>
-            <input type="text" id="adresseLivraison" name="adresseLivraison" required>
+          <label for="raisonSociale">Raison sociale:</label>
+          <select id="raisonSociale" class="select2-raison-sociale" required>
+            <!-- Options for Raison sociale (populate as needed) -->
+            <option value="company1">Company 1</option>
+            <option value="company2">Company 2</option>
+            <!-- Add more options as needed -->
+          </select>
+
+          <label for="ice">ICE:</label>
+          <input type="text" id="ice" name="ice" required />
+
+          <label for="nomContact">Nom contact:</label>
+          <input type="text" id="nomContact" name="nomContact" required />
+
+          <label for="tel">Tel:</label>
+          <input type="tel" id="tel" name="tel" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+
+          <label for="adresseFacturation">Adresse de facturation:</label>
+          <input
+            type="text"
+            id="adresseFacturation"
+            name="adresseFacturation"
+            required
+          />
+
+          <label for="adresseLivraison">Adresse de livraison:</label>
+          <input
+            type="text"
+            id="adresseLivraison"
+            name="adresseLivraison"
+            required
+          />
         </div>
-<div class="infos-generales">
 
-    <h3>Rubrique Infos générales:</h3>
-    
-    <label for="dateFacture">Date de la facture:</label>
-    <input type="date" id="dateFacture" name="dateFacture" required>
-    
-    <label for="dateLivraison">Date de livraison:</label>
-    <input type="date" id="dateLivraison" name="dateLivraison" required>
-    
-    <label for="totalHt">Total HT:</label>
-    <input type="number" id="totalHt" name="totalHt" required>
-    
-    <label for="tauxTva">Taux Tva:</label>
-    <input type="number" id="tauxTva" name="tauxTva" required>
-    
-    <label for="totalTtc">Total TTC:</label>
-    <input type="number" id="totalTtc" name="totalTtc" required>
-    
-    <button type="submit">Submit</button>
-</div>
-</form>
-</div>
-<div class="ajouter-facture-body-viewer"></div>
+        <div class="infos-generales grid-container">
+          <h3 class="ajouter-facture-formulaire-section-title">
+            Rubrique Infos générales:
+          </h3>
+
+          <label for="dateFacture">Date de la facture:</label>
+          <input type="date" id="dateFacture" name="dateFacture" required />
+
+          <label for="dateLivraison">Date de livraison:</label>
+          <input type="date" id="dateLivraison" name="dateLivraison" required />
+
+          <label for="totalHt">Total HT:</label>
+          <input type="number" id="totalHt" name="totalHt" required />
+
+          <label for="tauxTva">Taux Tva:</label>
+          <input type="number" id="tauxTva" name="tauxTva" required />
+
+          <label for="totalTtc">Total TTC:</label>
+          <input type="number" id="totalTtc" name="totalTtc" required />
+
+          <!-- Empty label for spacing -->
+          <label></label>
+          <button type="submit">Submit</button>
+        </div>
+
+        <!-- Tableau -->
+        <div class="tableau-pieces-facture-container">
+          <div class="tableau-pieces-facture-container-buttons">
+            <button id="reactivity-add">Ajouter Ligne</button>
+            <button id="reactivity-delete">Supprimer Ligne</button>
+            <button id="reactivity-update">Update First Row Name</button>
+          </div>
+          <div id="tableau-pieces-facture"></div>
+        </div>
+      </form>
+    </div>
+    <div class="resizable2 ajouter-facture-body-viewer"></div>
+  </div>
 </div>

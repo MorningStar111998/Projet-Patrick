@@ -51,7 +51,7 @@ app.get("/mes_fours", (req, res) => {
   });
 });
 app.get("/ajouter-facture-formulaire", (req, res) => {
-  res.render("partials/ajouter-facture-formulaire", {
+  res.render("ajouter-facture-formulaire", {
     activePage: "ajouter-facture-formulaire",
   });
 });
