@@ -33,12 +33,12 @@ $(document).ready(function () {
 
 
 
-// Factures
+// Factures et Charges
 $(document).ready(function () {
-    var modal = $("#ajouter-facture-body-modal");
-    var btn = $("#facture-ajouter-nouveau");
+    var modal = $(".form-modal");
+    var btn = $(".ajouter-nouveau");
 
-    var closeBtn = $("#ajouter-facture-close-button"); 
+    var closeBtn = $(".formulaire-close-button"); 
 
     btn.click(function () {
         console.log("appear");

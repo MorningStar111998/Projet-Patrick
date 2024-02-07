@@ -1,5 +1,5 @@
 $.ajax({
-  url: "/tableau-fiche-a-facturer-data",
+  url: "/tableau-fiche-a-charger-data",
   type: "GET",
   success: function (data) {
     var eyeIcon = function (cell, formatterParams, onRendered) {
@@ -12,9 +12,9 @@ $.ajax({
       return '<i class="fa-solid fa-ellipsis-vertical"></i>';
     };
 
-    var table = new Tabulator("#tableau-pieces-facture", {
+    var table = new Tabulator("#tableau-pieces-charge", {
       downloadRowRange: "active",
-      printHeader: "<h1>Fiches à Facturer<h1>",
+      printHeader: "<h1>Fiches à Charger<h1>",
       printStyled: true,
       printConfig: {
         columnHeaders: true,
@@ -67,28 +67,51 @@ $.ajax({
                 element.value = field[1];
               }
             });
-
-            console.log(row.getData().statut);
-            if ($(".fiche-body-right").css("display") === "none") {
-              $(".fiche-body-right").css("display", "block");
-              $(".fiche-body-left").css("width", "50%");
-            }
-            $("#fiche-button-fermer").on("click", function () {
-              $(".fiche-body-right").css("display", "none");
-              $(".fiche-body-left").css("width", "100%");
-            });
           },
         },
 
-        { title: "NumBL", field: "numBL", hozAlign: "left" },
-        { title: "NumBC", field: "numBC", hozAlign: "left" },
-        { title: "Matiere", field: "matiere", hozAlign: "left" },
-        { title: "Designation", field: "designation", hozAlign: "left" },
-        { title: "Traitement", field: "traitement", hozAlign: "left" },
-        { title: "NbrPieces", field: "nbrPieces", hozAlign: "left" },
-        { title: "PoidsKg", field: "poidsKg", hozAlign: "left" },
-        { title: "P.U.H.T/Kg", field: "puht", hozAlign: "left" },
-        { title: "P.T.H.T/Kg", field: "ptht", hozAlign: "left" },
+        {
+          title: "Numéro de Fiche",
+          field: "numFiche",
+          // formatter: function (row, formatterParams) {
+          //   var statut = row.getData().statut;
+          //   var value = row.getData().code;
+          //   return (
+          //     "<div class=' " + statut + " code-format'>" + value + "</div>"
+          //   );
+          // },
+        },
+
+        { title: "Matiere", field: "matiere", hozAlign: "left", minWidth: 120 },
+        {
+          title: "Designation",
+          field: "designation",
+          hozAlign: "left",
+        },
+        {
+          title: "Traitement",
+          field: "traitement",
+          hozAlign: "left",
+        },
+        {
+          title: "NbrPieces",
+          field: "nbrPieces",
+          hozAlign: "left",
+        },
+        {
+          title: "PoidsKg",
+          field: "poidsKg",
+          hozAlign: "left",
+          formatter: "money",
+          formatterParams: {
+            decimal: ",",
+            thousand: ".",
+            symbol: "Kg",
+            symbolAfter: "p",
+            negativeSign: true,
+            precision: false,
+          },
+        },
       ],
     });
     $("#fiche-generer-rapport").on("click", function () {

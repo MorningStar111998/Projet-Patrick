@@ -1,0 +1,98 @@
+#ajouter-charge-close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px;
+  background-color: red;
+  color: black;
+  z-index: 1000;
+}
+
+.form-modal {
+  z-index: 999;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.ajouter-charge-body {
+  display: flex;
+  font-family: "Noto Sans JP", sans-serif;
+  gap: 0px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.ajouter-charge-body-formulaire,
+.ajouter-charge-body-viewer {
+  padding: 10px;
+  box-sizing: border-box;
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+  min-width: 10rem;
+  overflow: scroll;
+}
+
+.ajouter-charge-body-formulaire {
+  border-right: 2px solid black;
+}
+
+form#ajouter-charge-formulaire .grid-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  align-items: center;
+  padding-right: 20%;
+}
+.ajouter-charge-formulaire-section-title {
+  grid-column: span 2;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.infos-generales {
+  margin-top: 40px;
+}
+
+#ajouter-charge-formulaire label {
+  text-align: right;
+  color: #00929c;
+  font-weight: bold;
+}
+
+#ajouter-charge-formulaire input,
+#ajouter-charge-formulaire select {
+  border: none;
+  padding: 5px;
+  background-color: #f0f0f0;
+}
+
+/* Tableau */
+.tableau-pieces-charge-container {
+  margin-top: 3rem;
+  overflow: auto;
+}
+
+#tableau-pieces-charge {
+  border: 1px solid black;
+}
+
+.tableau-pieces-charge-container-buttons {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.tableau-pieces-charge-container-buttons button {
+  padding: 5px;
+  border-radius: 2px;
+  color: #00929c;
+  border: #00929c solid 1px;
+}

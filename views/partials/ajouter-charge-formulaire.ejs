@@ -1,0 +1,62 @@
+<div class="form-modal" id="ajouter-charge-body-modal">
+  <div class="ajouter-charge-body">
+    <button id="ajouter-charge-close-button" class="formulaire-close-button">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <div class="resizable ajouter-charge-body-formulaire">
+      <form action="" id="ajouter-charge-formulaire">
+        <div class="infos-generales grid-container">
+          <h3 class="ajouter-charge-formulaire-section-title">Rubrique Infos Générales:</h3>
+            <label for="numCharge">Numéro de Charge:</label>
+            <input type="text" id="numCharge" name="numCharge" required>
+            
+            <label for="dateCreation">Date de Création:</label>
+            <input type="date" id="dateCreation" name="dateCreation" required>
+            
+            <label for="dateTimeChargementTheorique">DateTime de Chargement Théorique:</label>
+            <input type="datetime-local" id="dateTimeChargementTheorique" name="dateTimeChargementTheorique" required>
+            
+            <label for="dateTimeChargementReel">DateTime de Chargement Réel:</label>
+            <input type="datetime-local" id="dateTimeChargementReel" name="dateTimeChargementReel">
+            
+            <label for="dureeTraitementTheorique">Durée de Traitement Théorique:</label>
+            <input type="text" id="dureeTraitementTheorique" name="dureeTraitementTheorique">
+            
+            <label for="dateFinChargement">Date de Fin de Chargement:</label>
+            <input type="date" id="dateFinChargement" name="dateFinChargement">
+            
+            <label for="dureeTraitementReel">Durée de Traitement Réel:</label>
+            <input type="text" id="dureeTraitementReel" name="dureeTraitementReel">
+            
+            <label for="four">Four:</label>
+            <input type="text" id="four" name="four">
+            
+            <label for="traitement">Traitement:</label>
+            <input type="text" id="traitement" name="traitement">
+            
+            <label for="operateurCreation">Opérateur Création:</label>
+            <input type="text" id="operateurCreation" name="operateurCreation">
+            
+            <label for="operateurChargement">Opérateur Chargement:</label>
+            <input type="text" id="operateurChargement" name="operateurChargement">
+            
+            <label for="operateurControleValidation">Opérateur Contrôle et Validation:</label>
+            <input type="text" id="operateurControleValidation" name="operateurControleValidation">
+            
+        </div>
+        <button type="submit">Submit</button>
+
+        <!-- Tableau -->
+        <div class="tableau-pieces-charge-container">
+          <div class="tableau-pieces-charge-container-buttons">
+            <button id="reactivity-add">Ajouter Ligne</button>
+            <button id="reactivity-delete">Supprimer Ligne</button>
+            <button id="reactivity-update">Update First Row Name</button>
+          </div>
+          <div id="tableau-pieces-charge"></div>
+        </div>
+      </form>
+    </div>
+    <div class="resizable2 ajouter-charge-body-viewer"></div>
+  </div>
+</div>

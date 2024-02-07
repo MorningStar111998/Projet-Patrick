@@ -1,8 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 #ajouter-facture-close-button {
   position: absolute;
   top: 0;
@@ -13,7 +8,7 @@
   z-index: 1000;
 }
 
-.ajouter-facture-body-modal {
+.form-modal {
   z-index: 999;
   display: none;
   position: fixed;
@@ -47,10 +42,11 @@
 
 form#ajouter-facture-formulaire .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, 200px);
-  row-gap: 15px;
-  column-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 10px;
+  column-gap: 10px;
   align-items: center;
+  padding-right: 20%;
 }
 .ajouter-facture-formulaire-section-title {
   grid-column: span 2;

@@ -50,11 +50,7 @@ app.get("/mes_fours", (req, res) => {
     activePage: "mes_fours",
   });
 });
-app.get("/ajouter-facture-formulaire", (req, res) => {
-  res.render("ajouter-facture-formulaire", {
-    activePage: "ajouter-facture-formulaire",
-  });
-});
+
 
 app.get("/tableau-client-data", (req, res) => {
   res.json(tableData.tabledataClient);
