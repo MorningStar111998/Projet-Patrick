@@ -6,15 +6,13 @@
   background-color: red;
   color: black;
   z-index: 1000;
+    height: 30px;
+  width: 30px;
+  border-radius: 0;
 }
 
 .form-modal {
-  z-index: 999;
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
+  /* Dans ajouter-facture-formulaire.css */
 }
 
 .ajouter-charge-body {
@@ -23,6 +21,8 @@
   gap: 0px;
   height: 100vh;
   width: 100vw;
+  padding-bottom: 50px;
+  position: relative;
 }
 
 .ajouter-charge-body-formulaire,
@@ -34,6 +34,10 @@
   position: relative;
   min-width: 10rem;
   overflow: scroll;
+}
+
+.ajouter-charge-body-viewer {
+  margin-top: 30px;
 }
 
 .ajouter-charge-body-formulaire {
@@ -54,10 +58,6 @@ form#ajouter-charge-formulaire .grid-container {
   margin-bottom: 0px;
 }
 
-.infos-generales {
-  margin-top: 40px;
-}
-
 #ajouter-charge-formulaire label {
   text-align: right;
   color: #00929c;
@@ -69,16 +69,13 @@ form#ajouter-charge-formulaire .grid-container {
   border: none;
   padding: 5px;
   background-color: #f0f0f0;
+  max-width: 200px;
 }
 
 /* Tableau */
 .tableau-pieces-charge-container {
   margin-top: 3rem;
   overflow: auto;
-}
-
-#tableau-pieces-charge {
-  border: 1px solid black;
 }
 
 .tableau-pieces-charge-container-buttons {
@@ -90,9 +87,48 @@ form#ajouter-charge-formulaire .grid-container {
   margin-bottom: 10px;
 }
 
-.tableau-pieces-charge-container-buttons button {
-  padding: 5px;
+.tableau-pieces-charge-container-buttons button,
+.tableau-pieces-charge-container-buttons select {
+  padding: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
   border-radius: 2px;
-  color: #00929c;
+  background-color: #00929c;
+  color: white;
   border: #00929c solid 1px;
+}
+
+.tableau-pieces-charge .tabulator-headers {
+  background-color: #00929c !important;
+  color: white;
+}
+
+.button-rejeter#button-rejeter {
+  background-color: red;
+}
+.button-enregistrer#button-enregistrer {
+  background-color: rgb(77, 77, 77);
+}
+.button-quitter#button-quitter {
+  background-color: rgb(77, 77, 77);
+}
+.button-autres#button-autres {
+  background-color: white;
+  color: black;
+}
+
+.formulaire-buttons {
+  position: fixed;
+  height: 50px;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(184, 184, 184);
+  margin-bottom: 0;
+  padding-left: 20px;
+}
+
+
+/*Largeur de la poignée de rezible pour rendre plus facile à cliquer*/
+.ui-resizable-handle.ui-resizable-e {
+    width: 15px; /* Adjust the width as needed */
 }

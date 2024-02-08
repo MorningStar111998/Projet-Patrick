@@ -5,58 +5,104 @@
     </button>
     <div class="resizable ajouter-charge-body-formulaire">
       <form action="" id="ajouter-charge-formulaire">
+        <h4 class="form-title">
+          Créer une Charge
+        </h4>
         <div class="infos-generales grid-container">
-          <h3 class="ajouter-charge-formulaire-section-title">Rubrique Infos Générales:</h3>
-            <label for="numCharge">Numéro de Charge:</label>
-            <input type="text" id="numCharge" name="numCharge" required>
-            
-            <label for="dateCreation">Date de Création:</label>
-            <input type="date" id="dateCreation" name="dateCreation" required>
-            
-            <label for="dateTimeChargementTheorique">DateTime de Chargement Théorique:</label>
-            <input type="datetime-local" id="dateTimeChargementTheorique" name="dateTimeChargementTheorique" required>
-            
-            <label for="dateTimeChargementReel">DateTime de Chargement Réel:</label>
-            <input type="datetime-local" id="dateTimeChargementReel" name="dateTimeChargementReel">
-            
-            <label for="dureeTraitementTheorique">Durée de Traitement Théorique:</label>
-            <input type="text" id="dureeTraitementTheorique" name="dureeTraitementTheorique">
-            
-            <label for="dateFinChargement">Date de Fin de Chargement:</label>
-            <input type="date" id="dateFinChargement" name="dateFinChargement">
-            
-            <label for="dureeTraitementReel">Durée de Traitement Réel:</label>
-            <input type="text" id="dureeTraitementReel" name="dureeTraitementReel">
-            
-            <label for="four">Four:</label>
-            <input type="text" id="four" name="four">
-            
-            <label for="traitement">Traitement:</label>
-            <input type="text" id="traitement" name="traitement">
-            
-            <label for="operateurCreation">Opérateur Création:</label>
-            <input type="text" id="operateurCreation" name="operateurCreation">
-            
-            <label for="operateurChargement">Opérateur Chargement:</label>
-            <input type="text" id="operateurChargement" name="operateurChargement">
-            
-            <label for="operateurControleValidation">Opérateur Contrôle et Validation:</label>
-            <input type="text" id="operateurControleValidation" name="operateurControleValidation">
-            
-        </div>
-        <button type="submit">Submit</button>
+          <h5 class="ajouter-charge-formulaire-section-title">
+            Rubrique Infos Générales:
+          </h5>
+          <label for="numCharge">Numéro de Charge:</label>
+          <input type="text" id="numCharge" name="numCharge" required />
 
-        <!-- Tableau -->
-        <div class="tableau-pieces-charge-container">
-          <div class="tableau-pieces-charge-container-buttons">
-            <button id="reactivity-add">Ajouter Ligne</button>
-            <button id="reactivity-delete">Supprimer Ligne</button>
-            <button id="reactivity-update">Update First Row Name</button>
-          </div>
-          <div id="tableau-pieces-charge"></div>
+          <label for="dateCreation">Date de Création:</label>
+          <input type="date" id="dateCreation" name="dateCreation" required />
+
+          <label for="dateTimeChargementTheorique"
+            >DateTime de Chargement Théorique:</label
+          >
+          <input
+            type="datetime-local"
+            id="dateTimeChargementTheorique"
+            name="dateTimeChargementTheorique"
+            required
+          />
+
+          <label for="dateTimeChargementReel"
+            >DateTime de Chargement Réel:</label
+          >
+          <input
+            type="datetime-local"
+            id="dateTimeChargementReel"
+            name="dateTimeChargementReel"
+          />
+
+          <label for="dureeTraitementTheorique"
+            >Durée de Traitement Théorique:</label
+          >
+          <input
+            type="text"
+            id="dureeTraitementTheorique"
+            name="dureeTraitementTheorique"
+          />
+
+          <label for="dateFinChargement">Date de Fin de Chargement:</label>
+          <input type="date" id="dateFinChargement" name="dateFinChargement" />
+
+          <label for="dureeTraitementReel">Durée de Traitement Réel:</label>
+          <input
+            type="text"
+            id="dureeTraitementReel"
+            name="dureeTraitementReel"
+          />
+
+          <label for="four">Four:</label>
+          <input type="text" id="four" name="four" />
+
+          <label for="traitement">Traitement:</label>
+          <input type="text" id="traitement" name="traitement" />
+
+          <label for="operateurCreation">Opérateur Création:</label>
+          <input type="text" id="operateurCreation" name="operateurCreation" />
+
+          <label for="operateurChargement">Opérateur Chargement:</label>
+          <input
+            type="text"
+            id="operateurChargement"
+            name="operateurChargement"
+          />
+
+          <label for="operateurControleValidation"
+            >Opérateur Contrôle et Validation:</label
+          >
+          <input
+            type="text"
+            id="operateurControleValidation"
+            name="operateurControleValidation"
+          />
         </div>
+
       </form>
+      <!-- Tableau -->
+      <div class="tableau-pieces-charge-container">
+        <div class="tableau-pieces-charge-container-buttons">
+          <button id="add-row">Ajouter Ligne</button>
+          <button id="delete-row">Supprimer Ligne</button>
+          <button id="clear">Supprimer toutes les lignes</button>
+        </div>
+        <div id="tableau-pieces-charge"></div>
+      </div>
     </div>
     <div class="resizable2 ajouter-charge-body-viewer"></div>
+    <div class="formulaire-buttons tableau-pieces-charge-container-buttons">
+      <button class="button-archiver" id="button-archiver">Archiver</button>
+      <button class="button-approuver" id="button-approuver">Approuver</button>
+      <button class="button-rejeter" id="button-rejeter">Rejeter</button>
+      <button class="button-enregistrer" id="button-enregistrer">Enregistrer</button>
+      <button class="button-quitter" id="button-quitter">Quitter</button>
+      <select class="button-autres" id="button-autres">
+        <option selected disabled value="autres">Autres actions</option>
+      </select>
+    </div>
   </div>
 </div>
